@@ -46,6 +46,8 @@ class ProductManager {
 
             fs.writeFileSync(this.path, JSON.stringify(productos))
 
+            return product
+
         } else {
             console.error('Error: Todos los campos son obligatorios')
         }
@@ -58,8 +60,7 @@ class ProductManager {
 
         const productIndex = productos.findIndex(product => product.id === idProducto);
         if (productIndex === -1) {
-            console.error('Error: Producto no encontrado');
-            return false;
+            return console.error('Error: Producto no encontrado');;
         } else {
             return productIndex
         }
@@ -91,6 +92,7 @@ class ProductManager {
             productos[productIndex].code = newCode
             productos[productIndex].stock = newStock
             fs.writeFileSync(this.path, JSON.stringify(productos))
+            return productos[productIndex];
         }
     }
 
@@ -100,6 +102,7 @@ class ProductManager {
         if (productIndex>= 0) {
             productos = productos.filter(product => product.id != idProducto);
             fs.writeFileSync(this.path, JSON.stringify(productos))
+            return console.log('producto eliminado con exito')
         }
     }
 
