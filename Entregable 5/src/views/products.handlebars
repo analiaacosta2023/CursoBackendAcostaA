@@ -1,0 +1,52 @@
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link active" href="/products">Productos</a>
+  </li>
+
+    <li class="nav-item">
+    <a class="nav-link" href="/chat">Chat</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Carrito</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/api/sessions/logout">Log out</a>
+  </li>
+</ul>
+
+<div>
+
+    <p>Hola {{user.name}}!</p>
+    <p>email {{user.email}}</p>
+    <h1>Productos</h1>
+    <div id="item-container">
+        {{#each docs}}
+        <div class="product-card">
+            <p>id: {{this._id}}</p>
+            <p>Código: {{this.code}}</p>
+            <p>{{this.title}}</p>
+            <p>Categoría: {{this.category}}</p>
+            <p>{{this.description}}</p>
+            <p>$ {{this.price}}</p>
+            <p>Stock: {{this.stock}} unidades</p>
+            <button class="btn btn-black">AGREGAR AL CARRITO</button>
+        </div>
+        {{/each}}
+    </div>
+    <div class="pagination">
+         {{#if hasPrevPage}}
+    <a href="/products?page={{prevPage}}&limit={{limit}}"><button>Anterior</button></a>
+    {{/if}}
+
+    <p>{{page}}</p>
+
+    {{#if hasNextPage}}
+    <a href="/products?page={{nextPage}}&limit={{limit}}"><button>Siguiente</button></a>
+    {{/if}}   
+    </div>
+
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
