@@ -1,0 +1,293 @@
+main>.container {
+    padding: 60px 15px 0;
+}
+
+/* Style for the product card */
+
+.card {
+    cursor: pointer;
+}
+
+.product-img {
+    position: relative;
+}
+
+/* Style for the letter that appears on hover */
+.hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* Initially hidden */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Background color for the letter */
+    color: #fff;
+    /* Text color for the letter */
+    font-size: 20px;
+    /* Adjust the font size as needed */
+    text-align: center;
+    line-height: 200px;
+    /* Center the text vertically */
+}
+
+/* Show the letter when hovering over the product card */
+.card:hover .hover-content {
+    display: block;
+
+}
+
+.form-container {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+button {
+    box-shadow: 5px 4px 6px 2px #E488FF, 2px 2px 6px 2px rgba(0, 0, 0, 0);
+}
+
+/* Navbar */
+
+.nav-products {
+    display: flex;
+}
+
+.nav-profile {
+    display: flex;
+}
+
+/* Custom Pagination Styles */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.pagination-dark {
+    background-color: #333;
+    /* Set the background color to dark */
+}
+
+.pagination-dark .page-link {
+    color: #fff;
+    /* Set the text color to white */
+    background-color: #444;
+    /* Set the background color for individual pages */
+}
+
+.pagination-dark .page-link:hover {
+    background-color: #555;
+    /* Set the background color for hover state */
+}
+
+.pagination-dark .page-item.active .page-link {
+    background-color: #E488FF;
+    /* Set the background color for the active page */
+}
+
+
+
+/* real time products */
+
+.form-container form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 12px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container form p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* chat */
+
+#chatBox {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#messageLogs {
+    font-size: 14px;
+    color: #666;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+
+/* Login */
+
+.main-head {
+    height: 150px;
+    background: #FFF;
+
+}
+
+/* .main {
+    padding: 0px 10px;
+} */
+
+@media screen and (max-width: 450px) {
+    .login-form {
+        margin-top: 10%;
+    }
+
+    .register-form {
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        margin-left: 40%;
+    }
+
+    .login-form {
+        margin-top: 80%;
+    }
+
+    .register-form {
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text {
+    margin-top: 20%;
+    padding: 60px;
+    color: #fff;
+}
+
+.login-main-text h2 {
+    font-weight: 300;
+}
+
+.btn-black {
+    background-color: #000 !important;
+    color: #fff;
+}
+
+/* new login */
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #FED6E3, #d45b59, #8C53FF, #0549A8);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #FED6E3, #d45b59, #8C53FF, #0549A8);
+}
+
+.gradient-custom-3 {
+    /* fallback for old browsers */
+    background: #fccb90;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right,#fff, #FED6E3, #d45b59, #8C53FF, #0549A8, #212529);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #fff, #FED6E3, #d45b59, #8C53FF, #0549A8, #212529);
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+/* Single product page */
+
+body {
+    background-color: #000
+}
+
+.card {
+    border: none
+}
+
+.product {
+    background-color: #eee
+}
+
+.brand {
+    font-size: 13px
+}
+
+.act-price {
+    color: rgb(26, 51, 154);
+    font-weight: 700
+}
+
+.about {
+    font-size: 14px
+}
+
+.color {
+    margin-bottom: 10px
+}
+
+label.radio {
+    cursor: pointer
+}
+
+label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+}
+
+label.radio span {
+    padding: 2px 9px;
+    border: 2px solid #E488FF;
+    display: inline-block;
+    color: #E488FF;
+    border-radius: 3px;
+    text-transform: uppercase
+}
+
+label.radio input:checked+span {
+    border-color: #E488FF;
+    background-color: #E488FF;
+    color: #fff
+}
+
+.cart i {
+    margin-right: 10px
+}

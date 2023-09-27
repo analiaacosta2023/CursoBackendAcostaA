@@ -1,0 +1,136 @@
+<header>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/img/logo3.jpg" style="width: 200px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+                aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+                aria-labelledby="navbarOffcanvasLgLabel">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/products">Productos</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categorías
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/products?category=Home+%26+Kitchen">Bazar y cocina</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/products?category=Electronics">Electrónica</a></li>
+                            <li><a class="dropdown-item" href="/products?category=Furniture">Muebles</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li><a class="dropdown-item" href="/products?category=Clothing">Ropa</a></li>
+                            <li><a class="dropdown-item" href="/products?category=Beauty">Belleza</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/products?category=Sports">Deportes</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chat"><i class="fa-regular fa-comments"></i> Chat</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true"><i class="fa-regular fa-user"></i> Mi
+                            cuenta</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"><i class="fa-solid fa-cart-shopping"></i> Mi carrito</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/sessions/logout"><i
+                                class="fa-solid fa-arrow-right-from-bracket"></i> Log
+                            out</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="gradient-custom-3" style="height: 50px;">
+
+    </div>
+</header>
+<main>
+
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="images p-3">
+                                <div class="text-center p-4"> <img id="MainImg" src="../img/{{product.thumbnail.[0]}}"
+                                        width="250" /> </div>
+                                <div class="thumbnail text-center">
+                                    <img class="small-img" src="../img/{{product.thumbnail.[0]}}" width="70">
+                                    <img class="small-img" src="../img/{{product.thumbnail.[1]}}" width="70">
+                                    <img class="small-img" src="../img/size.jpeg" width="70">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="product p-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span
+                                            class="ml-1">Volver</span> </div> <i
+                                        class="fa fa-shopping-cart text-muted"></i>
+                                </div>
+                                <div class="mt-4 mb-3"> <span
+                                        class="text-uppercase text-muted brand">{{product.category}}</span>
+                                    <h5 class="text-uppercase">{{product.title}}</h5>
+                                    <p>Código: {{product.code}}</p>
+                                    <div class="price d-flex flex-row align-items-center">
+                                        <span class="act-price">$ {{product.price}}</span>
+                                    </div>
+                                </div>
+                                <p class="about">{{product.description}}</p>
+                                <div class="sizes mt-5">
+                                    <h6 class="text-uppercase">Talle</h6> <label class="radio"> <input type="radio"
+                                            name="size" value="S" checked> <span>S</span> </label> <label class="radio">
+                                        <input type="radio" name="size" value="M"> <span>M</span> </label> <label
+                                        class="radio"> <input type="radio" name="size" value="L"> <span>L</span>
+                                    </label> <label class="radio"> <input type="radio" name="size" value="XL">
+                                        <span>XL</span> </label> <label class="radio"> <input type="radio" name="size"
+                                            value="XXL"> <span>XXL</span> </label>
+                                </div>
+                                <p>Stock: {{product.stock}} unidades</p>
+                                <div class="cart mt-4 align-items-center"> <button
+                                        class="btn btn-dark gradient-custom-2 mb-3 text-uppercase mr-2 px-4">Agregar al
+                                        carrito</button> <i class="fa fa-heart text-muted"></i> <i
+                                        class="fa fa-share-alt text-muted"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+<script src="/js/sproduct.js"></script>

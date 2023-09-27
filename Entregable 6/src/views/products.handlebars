@@ -1,0 +1,137 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/img/logo3.jpg" style="width: 200px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+        aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+        aria-labelledby="navbarOffcanvasLgLabel">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/products">Productos</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorías
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/products?category=Home+%26+Kitchen">Bazar y cocina</a></li>
+              <li><a class="dropdown-item" href="/products?category=Electronics">Electrónica</a></li>
+              <li><a class="dropdown-item" href="/products?category=Furniture">Muebles</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li><a class="dropdown-item" href="/products?category=Clothing">Ropa</a></li>
+              <li><a class="dropdown-item" href="/products?category=Beauty">Belleza</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/products?category=Sports">Deportes</a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/chat"><i class="fa-regular fa-comments"></i> Chat</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true"><i class="fa-regular fa-user"></i> Mi cuenta</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#"><i class="fa-solid fa-cart-shopping"></i> Mi carrito</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/api/sessions/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log
+              out</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+      <div class="gradient-custom-3" style="height: 50px;">
+
+    </div>
+</header>
+<main>
+
+  <div class="container">
+
+    <p>Hola {{user.rol}} {{user.first_name}}!</p>
+    <p>email {{user.email}}</p>
+    <h1>Productos</h1>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3">
+      {{#each docs}}
+      <div class="col">
+        <div class="card shadow-sm" onclick="window.location.href='/products/{{this._id}}';" key="{{this._id}}">
+          <div class="row product-img">
+            <img src="img/{{this.thumbnail.[0]}}" alt="">
+            <div class="hover-content">
+              <i class="fa-solid fa-eye"></i> Ver producto
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p>id: {{this._id}}</p>
+            <p>Código: {{this.code}}</p>
+            <p>{{this.title}}</p>
+            <p>Categoría: {{this.category}}</p>
+            <p>{{this.description}}</p>
+            <p>Stock: {{this.stock}} unidades</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-dark ms-1"><i class="fa-solid fa-cart-shopping"></i></button>
+              <small class="text-body-secondary">$ {{this.price}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+  <nav aria-label="Page navigation">
+    <ul class="pagination pagination-dark" data-bs-theme="dark">
+
+      {{#if hasPrevPage}}
+      <li class="page-item">
+        <a class="page-link" href="/products?page={{prevPage}}&limit={{limit}}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="/products?page={{prevPage}}&limit={{limit}}">{{prevPage}}</a>
+      </li>
+      {{/if}}
+
+      <li class="page-item active"><a class="page-link" href="#">{{page}}</a></li>
+
+      {{#if hasNextPage}}
+      <li class="page-item"><a class="page-link" href="/products?page={{nextPage}}&limit={{limit}}">{{nextPage}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/products?page={{nextPage}}&limit={{limit}}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+      {{/if}}
+    </ul>
+  </nav>
+
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
